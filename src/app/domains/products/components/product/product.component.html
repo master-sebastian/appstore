@@ -2,5 +2,6 @@
     <img [src]="img" alt="">
     <h3> {{ title }}</h3>
     <hr>
-    <p>$ {{ getRandom() }}</p>
+    <p>$ {{ price() }}</p>
+    <button (click)="addToCartHander()">Click</button>
 </div>

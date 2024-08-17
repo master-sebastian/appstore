@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output, signal } from '@angular/core';
 
 @Component({
   selector: 'app-product',
@@ -14,6 +14,15 @@ export class ProductComponent {
   @Input({required: true}) title: string = "";
 
 
+  @Output() addToCart = new EventEmitter();
+
+  addToCartHander(){
+    console.log("cilc desde el hijo" + this.title);
+    this.addToCart.emit("hola, desde el "+this.title);
+  }
+
+  price = signal(this.getRandom());
+  
   getRandom(){
     return (1000 + Math.random() * 10000).toFixed(0); 
   }

@@ -8,5 +8,8 @@ import { ProductComponent } from '../../components/product/product.component';
   styleUrl: './list.component.css'
 })
 export class ListComponent {
-
+    desdeProducto(event: string){
+      console.info('estamos en el padre')
+      console.error(event);
+    }
 }
